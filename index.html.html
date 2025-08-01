@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suroor Scents</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!-- fonts links  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allison&family=Arizonia&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400..700&family=Sacramento&family=Style+Script&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- social links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Allison&family=Arizonia&family=Caveat:wght@400..700&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400..700&family=Sacramento&family=Style+Script&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+        /* dark light theme */
+        :root {
+            --bg-color: #000;
+            --text-color: #fff;
+            --section-bg: #111;
+            --text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
+        }
+
+        body.light-mode {
+            --bg-color: #fff;
+            --text-color: #000;
+            --section-bg: #f4f4f4;
+            --text-shadow: 2px 2px 5px rgb(255, 255, 255);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .mode-toggle {
+            position: fixed;
+            top: 42px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+            z-index: 1000;
+        }
+
+        .mode-toggle i {
+            pointer-events: none;
+        }
+
+
+
+        /* dark light theme End  */
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Winky Rough", sans-serif;
+            color: var(--text-color);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-color: rgb(164, 108, 108);
+            overflow-x: hidden;
+            color: var(--text-color);
+        }
+
+        .main_container {
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+            color: var(--text-color);
+        }
+
+        .main_container::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30vh;
+            background-color: black;
+            background-color: var(--bg-color);
+            filter: blur(20px);
+            z-index: -1;
+            color: var(--text-color);
+        }
+
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            background-color: rgb(163, 28, 28);
+            width: 20rem;
+            height: 25rem;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -2;
+            animation: pulse 6s infinite ease-in-out;
+        }
+
+        /* circle */
+
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            background-color: rgb(163, 28, 28);
+            width: 20rem;
+            height: 25rem;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -2;
+            animation: spande 4s ease-in-out infinite, glow 6s ease-in-out infinite;
+        }
+
+        @keyframes spande {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 60px 30px rgba(255, 0, 0, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 90px 45px rgba(255, 0, 0, 0.8);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+
+        .container {
+            max-width: 1100px;
+            height: 100vh;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            height: 14vh;
+            animation: slideDown 1s ease-out forwards;
+            color: var(--text-color);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            background-color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+        }
+
+        .logo img {
+
+            width: 5rem;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Winky Rough", sans-serif;
+        }
+
+        @keyframes rotateIn {
+            0% {
+                transform: rotate(-360deg) scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotate(45deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            color: var(--text-color);
+
+
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: red;
+            bottom: -2px;
+            left: 0;
+            transition: 0.4s;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        a:hover,
+        .active {
+            color: rgb(255, 0, 51);
+        }
+
+        .hero_Section {
+
+            height: calc(100vh - 14vh);
+            display: flex;
+            align-items: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .left_container {
+            flex: 1;
+        }
+
+        .left_container h1 {
+            font-size: 4rem;
+            color: rgb(5, 90, 164);
+            color: var(--text-color);
+            animation: bounceInLeft 2s ease;
+        }
+
+        @keyframes bounceInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateX(30px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .center_container {
+
+            flex: 2;
+            z-index: 1;
+        }
+
+        .center_container img {
+            margin-left: 140px;
+            margin-bottom: 40px;
+            width: 44%;
+            transform: scale(0.8);
+            animation: zoomIn 3s ease forwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.2);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .right_container {
+             font-family: "Dancing Script", cursive;
+            flex: 1;
+        }
+
+        .para {
+            font-size: medium;
+            font-weight: 200;
+            margin-top: 30px;
+            color: white;
+            line-height: 1.3rem;
+            animation: fadeInRight 2s ease;
+            color: var(--text-color);
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .scroll_container {
+            background-color: rgb(0, 0, 0);
+            background-color: var(--bg-color);
+            background-color: var(--section-bg);
+            white-space: nowrap;
+            overflow: hidden;
+            padding: rem 0;
+            position: sticky;
+        }
+
+        .scroll {
+            display: inline-block;
+            animation: Scroll 10s linear infinite;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: rgb(255, 195, 195);
+            font-family: "eligendi", cursive;
+            display: inline-block;
+            margin: 0 2rem;
+            color: var(--text-color);
+        }
+h1{
+     font-family: "Dancing Script", cursive;
+}
+
+h3{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+        .break {
+            width: 1rem;
+            height: 1rem;
+            background-color: rgb(255, 0, 0);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @keyframes Scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 4rem 2rem;
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .product_container img {
+            width: 300px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .content a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: red;
+            color: white;
+            color: var(--text-color);
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .content a:hover {
+            transform: scale(1.1);
+        }
+
+        .cards-section {
+            background-color: var(--section-bg);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 1rem;
+        }
+
+        .card {
+            background: #6800005c;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 1rem;
+            max-width: 250px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .card img.hover-img {
+            opacity: 0;
+        }
+
+        .card:hover img.default-img {
+            opacity: 0;
+        }
+
+        .card:hover img.hover-img {
+            opacity: 1;
+        }
+
+        .card h3 {
+            margin: 1rem 0 0.5rem;
+            color: #ff6666;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .card button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: red;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .card button:hover {
+            transform: scale(1.05);
+        }
+
+
+
+        @media (max-width: 768px) {
+            .left_container h1 {
+                font-size: 2rem;
+            }
+
+            .center_container img {
+                max-width: 300px;
+            }
+        }
+
+        /* rewiew section */
+
+        .review-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ffffff21;
+            background-color: var(--bg-color);
+            /* background-color: var(--section-bg); */
+            overflow: hidden;
+        }
+
+        .review-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #ff4d4d;
+        }
+
+        .slider-wrapper {
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            will-change: transform;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .customer-name {
+
+            color: #fff;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .stars {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        .feedback {
+            font-size: 1rem;
+            color: #ccc;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* feedback section  */
+
+        .feedback-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #111;
+            background-color: var(--bg-color);
+            background-color: var(--section-bg);
+        }
+
+        .feedback-section h2 {
+            font-size: 2rem;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+
+        .feedback-section textarea {
+            color: var(--text-color);
+            width: 80%;
+            max-width: 500px;
+            height: 100px;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .stars {
+            margin: 20px 0;
+        }
+
+        .stars i {
+            font-size: 2rem;
+            color: #ccc;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .stars i:hover,
+        .stars i.selected {
+            color: #ffcc00;
+        }
+
+        .feedback-section button {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            background-color: var(--bg-color);
+            color: white;
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .feedback-section button:hover {
+            background-color: #e60000;
+        }
+
+        /* about section Styling */
+        /* About Section */
+        .about-section {
+            width: 100%;
+            padding: 60px 20px;
+            background-color: var(--bg-color);
+            color: #831919;
+
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+
+            margin: auto;
+            margin-bottom: 20px;
+            font-family: monospace;
+            color: red;
+
+
+        }
+
+        .about-section p {
+
+            max-width: 1600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+
+
+        /* social links */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            background-color: var(--bg-color);
+
+            color: #fff;
+            color: var(--text-color);
+        }
+
+        .social-section {
+            width: 100%;
+            background-color: #000000;
+            background-color: var(--bg-color);
+            background-color: var(--section-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-section h2 {
+            color: #ff4d4d;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            color: var(--text-color);
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff4d4d;
+
+        }
+
+
+        /* Footer */
+        footer {
+            background: #111;
+            background-color: var(--bg-color);
+            color: #fff;
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px 100px;
+            font-size: 0.9rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        p,
+        a {
+            text-shadow: var(--text-shadow);
+        }
+
+        
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .product img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+    }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="scroll_container">
+        <div class="scroll">
+            <h2>30% OFF</h2>
+            <h2>Order Now</h2>
+            <div class="break"></div>
+        </div>
+        <div class="scroll">
+            <h2>30% OFF</h2>
+            <h2>Order Now</h2>
+            <div class="break"></div>
+        </div>
+        <div class="scroll">
+            <h2>30% OFF</h2>
+            <h2>Order Now</h2>
+            <div class="break"></div>
+        </div>
+        <div class="scroll">
+            <h2>30% OFF</h2>
+            <h2>Order Now</h2>
+            <div class="break"></div>
+        </div>
+        <div class="scroll">
+            <h2>30% OFF</h2>
+            <h2>Order Now</h2>
+            <div class="break"></div>
+        </div>
+
+        <div class="scroll">
+            <h2>50% OFF</h2>
+            <h2>Order Now</h2>
+            <div class="break"></div>
+        </div>
+    </div>
+
+
+
+    <div class="main_container">
+        <div class="circle"></div>
+        <div class="container">
+            <header>
+                <nav class="navbar">
+                    <div class="logo"> <img src="Images/Suroor-Scents.png" alt="Suroor-Scents Logo"></div>
+                 
+                    <ul>
+                        <li><a href="#" class="navlinks active">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">SHOP</a></li>
+                        <li><a href="#">LOGIN</a></li>
+                    </ul>
+                </nav>
+
+
+            </header>
+            <button class="mode-toggle" onclick="toggleMode()">
+                <i id="mode-icon" class="fas fa-moon"></i>
+            </button>
+            <div class="hero_Section">
+                <div class="left_container">
+                    <h1>Smells You Deserve</h1>
+                </div>
+                <div class="center_container">
+                    <img src="Images/Bottle/gucci.png" alt="Perfume Bottle">
+                </div>
+                <div class="right_container">
+                    <p class="para">Indulge in a scent that tells your story. Our fragrance is more than a perfume —
+                        it’s an expression of elegance, confidence, and timeless charm. With every note, it awakens your
+                        senses, leaving a lasting impression wherever you go. One spray, and you’re unforgettable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main>
+        <section class="section">
+            <div class="container row">
+                <div class="product_container">
+                    <img style="height: 500px; width:300px" src="Images/Gucci-Flora.png" alt="Best Seller Perfume">
+                </div>
+                <div class="content">
+                    <h2>Our Most Demanding Product </h2>
+                    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nisi aliquam non
+                        nostrum possimus accusamus veniam labore aspernatur maiores optio quo placeat aliquid, quae
+                        atque cumque tenetur qui voluptatibus, dolor sequi iusto mollitia laudantium perspiciatis minus
+                        necessitatibus. Asperiores odio dolore quam impedit ad alias labore minus aperiam perferendis
+                        veritatis, in enim eligendi deleniti sunt vero.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="cards-section">
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/Oud.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/oud-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Oud-e-Hayaan</h3>
+                <p>Long-lasting fragrance with Oudi notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 3,500</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 2,450</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/aventus.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/aventus-creed-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Monarch</h3>
+                <p>Long-lasting fragrance with Bright & Fruity notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 3,300</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 2,499</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+             <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/bomshel.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/bomshel-2-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Pink Passion</h3>
+                <p>Long-lasting fragrance with Floral notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 2,099</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+
+             <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/eros.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/varsaci-eros gold-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Velvet Eors</h3>
+                <p>Long-lasting fragrance with Mint notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+             <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/office.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/ofiice-bg-green.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Urban edge</h3>
+                <p>Long-lasting fragrance with Bergamot notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+             <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/savage.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/savage-diorbg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Midnight Edge</h3>
+                <p>Long-lasting fragrance with Calabrian notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+              <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/tommy.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/tomy-girl-purple-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Only Mine</h3>
+                <p>Long-lasting fragrance with Floral & Fruity notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+              <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/gucci.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/gucci-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Peony Dreams</h3>
+                <p>Long-lasting fragrance with Floral notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+              <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/hugo-boss.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/hugo-boss-bg.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Legac Pour Homme</h3>
+                <p>Long-lasting fragrance with Fruity notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+              <div class="card">
+                <div class="image-wrapper">
+                    <img src="Images/Bottle/azzaro.png" alt="Perfume 1" class="default-img">
+                    <img src="Images/bg/azzaro.png" alt="Perfume 1 Hover" class="hover-img">
+                </div>
+                <h3>Unwanted Code</h3>
+                <p>Long-lasting fragrance with Spicy notes.</p>
+                <span style="text-decoration: line-through; color: var(--text-color)">PKR 5,000</span>
+                <span style="color: #ff4d4d; font-weight: bold; margin-left: 10px;">PKR 3,500</span><br>
+                <button>Add to Cart</button>
+            </div>
+
+
+
+
+        </div>
+        </div>
+    </main>
+
+    <!-- Review Section -->
+
+    <section class="review-section">
+        <h2>What Our Customers Say</h2>
+        <div class="slider-wrapper">
+            <div class="slider" id="slider">
+                <div class="slide">
+                    <div class="customer-name">Sarah Khan</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="feedback">Absolutely love this scent! It stays with me all day and I always get
+                        compliments. Will definitely repurchase!</div>
+                </div>
+                <div class="slide">
+                    <div class="customer-name">Ali Raza</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="feedback">Very fresh and luxurious. The bottle design is classy and the fragrance is
+                        long-lasting. Great value!</div>
+                </div>
+                <div class="slide">
+                    <div class="customer-name">Zainab Sheikh</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="feedback">Toxic Scents has become my favorite brand. Elegant and strong fragrance with a
+                        soft finish. Love it!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- feedback -->
+    <section class="feedback-section">
+        <h2>Customer Feedback</h2>
+        <div class="stars" id="stars">
+            <i class="fas fa-star" data-star="1"></i>
+            <i class="fas fa-star" data-star="2"></i>
+            <i class="fas fa-star" data-star="3"></i>
+            <i class="fas fa-star" data-star="4"></i>
+            <i class="fas fa-star" data-star="5"></i>
+        </div>
+        <textarea placeholder="Write your feedback here..."></textarea><br><br>
+        <button>Submit Feedback</button>
+    </section>
+
+    <!-- /* about section */ -->
+    <!-- /* About Section */ -->
+    <section class="about-section" id="about">
+        <h2>About us</h2>
+
+        <p>Toxic Scents is not just a brand, it's an experience. Our fragrances are crafted with precision and passion,
+            bringing a blend of confidence and allure in every spray. Made for the unforgettable.</p>
+        <p>Our story began with a dream to create scents that evoke emotions and leave a lasting impression. Today,
+            we're proud to be one of the leading perfume brands in the industry,
+        <div class="social-links">
+
+            <!-- social links -->
+            <section class="social-section">
+                <h2>Follow Us on</h2>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suroor Scents. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        const stars = document.querySelectorAll('.stars i');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                stars.forEach(s => s.classList.remove('selected'));
+                star.classList.add('selected');
+                let prev = star.previousElementSibling;
+                while (prev) {
+                    prev.classList.add('selected');
+                    prev = prev.previousElementSibling;
+                }
+            });
+        });
+
+        // Review Section
+
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        const total = slides.length;
+
+        function moveSlider() {
+            current++;
+            if (current >= total) {
+                slider.style.transition = 'none';
+                slider.style.transform = 'translateX(0)';
+                current = 1;
+                setTimeout(() => {
+                    slider.style.transition = 'transform 0.8s ease-in-out';
+                    slider.style.transform = `translateX(-${current * 100}%)`;
+                }, 50);
+            } else {
+                slider.style.transform = `translateX(-${current * 100}%)`;
+            }
+        }
+
+        // Clone first slide for seamless loop
+        const firstClone = slides[0].cloneNode(true);
+        slider.appendChild(firstClone);
+
+        setInterval(moveSlider, 3500);
+
+        // dark ligh theme
+
+        const body = document.body;
+        const icon = document.getElementById('mode-icon');  
+
+        function applyMode(mode) {
+            if (mode === 'light') {
+                body.classList.add('light-mode');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                body.classList.remove('light-mode');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        // Load saved theme or fallback to system preference
+        const savedMode = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        applyMode(savedMode || (prefersLight ? 'light' : 'dark'));
+
+        function toggleMode() {
+            const isLight = body.classList.toggle('light-mode');
+            icon.classList.toggle('fa-moon', !isLight);
+            icon.classList.toggle('fa-sun', isLight);
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+        // dark ligh theme end
+    </script>
+</body>
+
+</html>
